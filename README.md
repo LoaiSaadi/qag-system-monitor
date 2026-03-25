@@ -1,6 +1,6 @@
-# QAG System Monitor (Power BI → CSV → Alerts)
+# QAG System Monitor 
 
-Automates downloading two Power BI exports (CSV), runs health checks, generates grouped JSON alerts, and optionally sends alerts to a Push API.  
+**Power BI → CSV → Alerts** - automates downloading two Power BI exports (CSV), runs health checks, generates grouped JSON alerts, and optionally sends alerts to a Push API.  
 Logs are saved under `logs/YYYY-MM-DD/HH-MM-SS.txt`.
 
 ## What it does
@@ -17,9 +17,17 @@ Logs are saved under `logs/YYYY-MM-DD/HH-MM-SS.txt`.
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
-Create .env (copy from .env.example) and fill values.
-Run
+   ```
+3. Create .env (copy from .env.example) and fill values - Windows (CMD):
+   ```bash
+   copy .env.example .env
+   ```
+
+## Run
+```bash
 python main.py
-Notes
-reports/ and logs/ are generated automatically and are ignored by git.
-SEND_ALERTS=false by default. Set to true only when your Push API credentials are configured.
+```
+
+## Notes
+* reports/ and logs/ are generated automatically and are ignored by git.
+* SEND_ALERTS=false by default. Set to true only when your Push API credentials are configured.
